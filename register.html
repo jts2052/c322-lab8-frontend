@@ -51,8 +51,9 @@
     </form>
 
     <script>
-        let address = "localhost";
+        let address = "https://ducks-service-b8et.onrender.com";
         let port = 8080;
+
         async function signup() {
             let email = document.getElementsByName("email")[0].value;
             let username = document.getElementsByName("username")[0].value;
@@ -62,7 +63,7 @@
                 alert("Passwords do not match");
                 return;
             }
-            let response = await fetch(`http://${address}:${port}/signup`, {
+            let response = await fetch(`http://${address}/signup`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
